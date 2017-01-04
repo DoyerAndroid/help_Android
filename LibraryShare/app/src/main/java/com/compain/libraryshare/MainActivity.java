@@ -12,8 +12,9 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import java.util.ArrayList;
 
 
-public class MainActivity extends FragmentActivity implements BottomNavigationBar.OnTabSelectedListener{
+public class MainActivity extends FragmentActivity implements BottomNavigationBar.OnTabSelectedListener {
     private ArrayList<Fragment> fragments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +28,7 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Home"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_book_white_24dp, "Books"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp, "Music"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_tv_white_24dp, "Movies & TV"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_videogame_asset_white_24dp, "Games"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp, "Share"))
                 .initialise();
         fragments = getFragments();
         setDefaultFragment();
@@ -40,9 +39,7 @@ public class MainActivity extends FragmentActivity implements BottomNavigationBa
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(HomeFragment.newInstance("Home"));
         fragments.add(BookFragment.newInstance("Books"));
-        fragments.add(MusicFragment.newInstance("Music"));
-        fragments.add(TvFragment.newInstance("Movies & TV"));
-        fragments.add(GameFragment.newInstance("Games"));
+        fragments.add(ShareFragment.newInstance("Share"));
         return fragments;
     }
 
